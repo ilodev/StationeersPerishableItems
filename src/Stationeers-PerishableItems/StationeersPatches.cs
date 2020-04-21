@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts;
 using Assets.Scripts.Objects;
 using Assets.Scripts.Objects.Entities;
 using Assets.Scripts.Objects.Items;
@@ -96,6 +97,9 @@ namespace Stationeers_PerishableItems
             // the Update() function per-item is going to be stressing.
             try
             {
+                if (!GameManager.IsServer)
+                    return;
+
                 if (__instance == null)
                     return;
 
@@ -169,6 +173,9 @@ namespace Stationeers_PerishableItems
         {
             try
             {
+                if (!GameManager.IsServer)
+                    return;
+
                 Plant plantItem = __instance as Plant;
                 if (plantItem == null)
                     return;
@@ -206,6 +213,9 @@ namespace Stationeers_PerishableItems
 
             try
             {
+                if (!GameManager.IsServer)
+                    return;
+
                 Plant plantItem = __instance as Plant;
                 if (plantItem == null)
                     return;
@@ -253,6 +263,9 @@ namespace Stationeers_PerishableItems
 
             try
             {
+                if (!GameManager.IsServer)
+                    return;
+
                 Human target = useOnThing as Human;
                 if (target == null)
                     return;
