@@ -1,0 +1,11 @@
+1.0.2.0
+  - Food damage settings have been balanced (and reduced).
+  - Game pause will stop spoiling food and plants.
+  - Spoiling has been disabled in Creative.
+
+1.0.1.0
+  - Fix to avoid clients thinking they were in control of the decaying.
+
+1.0.0.0
+  - First release version
+  

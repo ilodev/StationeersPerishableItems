@@ -37,8 +37,8 @@ namespace Stationeers_PerishableItems
             // Add a little toxicity to the food, modified by the nutrition value of the item, the toxicity
             // will be used later to apply stun damage to the player ingesting this food item.
             // foodItem.NutritionValue *= 0.98f; // to make food lose nutrients
-            foodItem.DamageState.Brute += 0.005f * damage;
-            foodItem.DamageState.Toxic += 0.003f * damage;
+            foodItem.DamageState.Brute += 0.002f * damage;
+            foodItem.DamageState.Toxic += 0.001f * damage;
             foodItem.NutritionValue    -= 0.001f * damage;
 #if DEBUG
                 if (damage > 0.0f) { 
@@ -97,7 +97,7 @@ namespace Stationeers_PerishableItems
             // the Update() function per-item is going to be stressing.
             try
             {
-                if (!GameManager.IsServer)
+                if (!GameManager.IsServer || WorldManager.IsPaused || WorldManager.Instance.GameMode != GameMode.Survival)
                     return;
 
                 if (__instance == null)
