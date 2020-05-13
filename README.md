@@ -101,7 +101,7 @@ closed (e.g. a suit, a locker). Food in your suit will last longer than in your 
 long as you don't leave that inventory window open. plants and food can also be kept safe in a closed 
 container crate since these are considered insulated items, however this behaviour is configurable.
 
-Canned food (Milk, Tomato Soup or Cereal BardS) will also last longer while the container it is in has 
+Canned food (Milk, Tomato Soup or Cereal Bars) will also last longer while the container it is in has 
 not been opened, but will decay normally once it has been started to be consumed.
 
 *Humans* will get damage from eating a decayed item in different ways:
