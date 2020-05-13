@@ -32,7 +32,7 @@ namespace Stationeers_PerishableItems
             // TODO: maybe move these settings to the config file?
             // Clamp the temperature value between 0C and 40C, below 0C there is no spoiling, beyond 40C takes max damage.
             float tempC = PerishableItemsHelpers.Clamp(foodItem.WorldAtmosphere.Temperature - 273.15f, 0.0f, 40.0f);
-            float damage = baseDamage * (tempC / 40.0f) * Math.Max(foodItem.WorldAtmosphere.ParticalPressureO2, 0.001f);
+            float damage = baseDamage * (tempC / 40.0f) * Math.Max(foodItem.WorldAtmosphere.ParticalPressureO2, 0.01f) / 100f;
 
             // Add a little toxicity to the food, modified by the nutrition value of the item, the toxicity
             // will be used later to apply stun damage to the player ingesting this food item.
@@ -47,7 +47,8 @@ namespace Stationeers_PerishableItems
                         " Name: " + foodItem.DisplayName + 
                         " Temp: " + foodItem.WorldAtmosphere.Temperature + 
                         " Damage: " + damage + 
-                        " O2: " + foodItem.WorldAtmosphere.GasMixture.Oxygen.Quantity
+                        " O2: " + foodItem.WorldAtmosphere.GasMixture.Oxygen.Quantity +
+                        " O2p: " + foodItem.WorldAtmosphere.ParticalPressureO2
                     );
                 }
 #endif

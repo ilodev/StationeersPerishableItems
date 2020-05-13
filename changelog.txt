@@ -1,3 +1,6 @@
+1.0.3.0
+  - Food damage settings balanced (and reduced even further)
+
 1.0.2.0
   - Food damage settings have been balanced (and reduced).
   - Game pause will stop spoiling food and plants.
