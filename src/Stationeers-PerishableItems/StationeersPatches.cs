@@ -32,7 +32,23 @@ namespace Stationeers_PerishableItems
             // TODO: maybe move these settings to the config file?
             // Clamp the temperature value between 0C and 40C, below 0C there is no spoiling, beyond 40C takes max damage.
             float tempC = PerishableItemsHelpers.Clamp(foodItem.WorldAtmosphere.Temperature - 273.15f, 0.0f, 40.0f);
-            float damage = baseDamage * (tempC / 40.0f) * Math.Max(foodItem.WorldAtmosphere.ParticalPressureO2, 0.01f) / 100f;
+            float damage = baseDamage * (tempC / 40.0f) * Math.Max(foodItem.WorldAtmosphere.ParticalPressureO2, 0.01f) / 1000f;
+
+            // Damage applied based on the type of food container
+            switch(foodItem.PrefabHash)
+            {
+                // Canned food has a special treatment, it will last longer while the container hasn't been opened, after
+                // that it will be treated as any other food (spoiling time based on the item heatpoints).
+                case 1327248310: // Milk
+                case 791746840:  // Cereal Bar
+                case 688734890:  // Tomato Soup
+                    if (foodItem.RemainingRatio >= 1)
+                        damage *= PerishableItemsPlugin.PluginCannedMultiplier.Value;
+                    break;
+                case 1387403148: // Soy oil
+                    damage *= PerishableItemsPlugin.PluginBottledMultiplier.Value;
+                    break;
+            }
 
             // Add a little toxicity to the food, modified by the nutrition value of the item, the toxicity
             // will be used later to apply stun damage to the player ingesting this food item.

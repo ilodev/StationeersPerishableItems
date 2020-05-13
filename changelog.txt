@@ -1,3 +1,9 @@
+1.0.4.0
+  - Canned food (Milk, Tomato Soup, Cereal Bars) have a different behaviour and
+    will last longer until the container is open (food is initially consumed).
+  - Bottled food (Soy oil) has a custom preservation multiplier.
+  - Final rebalance of food damage.
+
 1.0.3.0
   - Food damage settings balanced (and reduced even further)
 

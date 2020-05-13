@@ -27,31 +27,58 @@ The mod will create a config file in the BepInHex/Config/ called. The following 
 allow for different gameplay and difficulty
 
 ```
-## Settings file was created by plugin Perishable Items for Stationeers v1.0.0.0
+## Settings file was created by plugin Perishable Items for Stationeers v1.0.4.0
+## Plugin GUID: org.ilo.plugins.Stationeers_PerishableItems
+## Settings file was created by plugin Perishable Items for Stationeers v1.0.4.0
 ## Plugin GUID: org.ilo.plugins.Stationeers_PerishableItems
 
 [General]
+
 ## Enable or disable the plugin
+# Setting type: Boolean
+# Default value: true
 Enabled = true
 
-## Multiplier for decay settings per consumable item, overall speed multiplier
+## Multiplier for decay settings per consumable item
+# Setting type: Single
+# Default value: 1
 DecayMultiplier = 1
 
 ## If true, container Crates will be sealed while closed and maintain food
+# Setting type: Boolean
+# Default value: true
 AllowSealedContainer = true
 
 [Rates]
 
 ## Multiplier for decay settings when the item is not in a closed container
+# Setting type: Single
+# Default value: 4
 UnprotectedDecayMultiplier = 4
 
+## Multiplier for food damage applied to canned food like Tomato soup, milk or cereal bars while closed
+# Setting type: Single
+# Default value: 0.1
+CannedMultiplier = 0.1
+
+## Multiplier for food damage applied to bottled food like soy oil
+# Setting type: Single
+# Default value: 0.001
+BottledMultiplier = 0.001
+
 ## Multiplier for base damage applied to the player consuming decayed item
+# Setting type: Single
+# Default value: 1
 DamageMultiplier = 1
 
 ## Multiplier for stun damage applied to the player consuming decayed item
+# Setting type: Single
+# Default value: 1
 StunMultiplier = 1
 
 ## Multiplier for toxic damage applied to the player consuming decayed items
+# Setting type: Single
+# Default value: 1
 ToxicMultiplier = 1
 ```
 
@@ -73,6 +100,9 @@ Damage to both Plants and Foods can be reduced if they are stored in any invento
 closed (e.g. a suit, a locker). Food in your suit will last longer than in your hands or the ground as
 long as you don't leave that inventory window open. plants and food can also be kept safe in a closed 
 container crate since these are considered insulated items, however this behaviour is configurable.
+
+Canned food (Milk, Tomato Soup or Cereal BardS) will also last longer while the container it is in has 
+not been opened, but will decay normally once it has been started to be consumed.
 
 *Humans* will get damage from eating a decayed item in different ways:
 

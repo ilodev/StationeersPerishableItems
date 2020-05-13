@@ -31,6 +31,12 @@ namespace Stationeers_PerishableItems
         // How much decay affects food or plants when they are not in a locked item (suit, locker etc).
         public static ConfigEntry<float> PluginUnprotectedMultiplier;
 
+        // how much decay affects canned food
+        public static ConfigEntry<float> PluginCannedMultiplier;
+
+        // how much decay affects bottled food
+        public static ConfigEntry<float> PluginBottledMultiplier;
+
         // How much food decay affects player heath as a warning of poisoning, and to slow down eating in difficulty settings 
         public static ConfigEntry<float> PluginDamageMultiplier;
 
@@ -67,6 +73,18 @@ namespace Stationeers_PerishableItems
                 "UnprotectedDecayMultiplier",
                 4.0f,
                 "Multiplier for decay settings when the item is not in a closed container"
+            );
+            PluginCannedMultiplier = Config.Bind(
+                "Rates",
+                "CannedMultiplier",
+                0.1f,
+                "Multiplier for food damage applied to canned food like Tomato soup, milk or cereal bars while closed"
+            );
+            PluginBottledMultiplier = Config.Bind(
+                "Rates",
+                "BottledMultiplier",
+                0.001f,
+                "Multiplier for food damage applied to bottled food like soy oil"
             );
             PluginDamageMultiplier = Config.Bind(
                 "Rates",
